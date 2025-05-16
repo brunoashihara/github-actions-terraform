@@ -24,20 +24,7 @@ provider "oci" {
 ############################################
 
 resource "oci_identity_compartment" "compartment" {
-  description   = var.compartment.desc
-  name          = var.compartment.name
-  enable_delete = var.compartment.delete
-}
-
-############################################
-# COMPARTMENT
-############################################
-
-variable "compartment" {
-  description = "Configuração do compartment OCI"
-  default   = {
-    name   = "compartment_tf"
-    desc   = "Compartment creation"
-    delete = true
-  }
+  description   = "Compartment creation"
+  name          = "compartment_tf"
+  enable_delete = true
 }
