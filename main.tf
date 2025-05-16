@@ -34,7 +34,7 @@ resource "oci_identity_compartment" "compartment" {
 ############################################
 
 resource "oci_objectstorage_bucket" "bucket" {
-  compartment_id = oci_identity_compartment.compartment_id
+  compartment_id = oci_identity_compartment.compartment.compartment_id
   name           = "test-github-actions-test"
   namespace      = "idnriwtvurim"
   access_type    = "NoPublicAccess"
