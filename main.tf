@@ -28,3 +28,15 @@ resource "oci_identity_compartment" "compartment" {
   name          = "compartment_tf"
   enable_delete = true
 }
+
+############################################
+# BUCKET
+############################################
+
+resource "oci_objectstorage_bucket" "bucket" {
+  compartment_id = oci_identity_compartment.compartment_id
+  name           = "test-github-actions-test"
+  namespace      = "idnriwtvurim"
+  access_type    = "NoPublicAccess"
+  storage_tier   = "Standard"
+}
